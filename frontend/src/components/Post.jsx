@@ -15,7 +15,7 @@ export default function Post() {
     const fetchPosts = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/v1/post/getposts?userId=${currentUser._id}`
+          `api/v1/post/getposts?userId=${currentUser._id}`
         );
         const data = res.data;
 
@@ -40,7 +40,7 @@ export default function Post() {
 
     try {
       const res = await axios.get(
-        `http://localhost:3000/api/v1/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`,
+        `api/v1/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`,
         { withCredentials: true }
       );
       const data = res.data;
@@ -63,7 +63,7 @@ export default function Post() {
 
     try {
       const res = await axios.delete(
-        `http://localhost:3000/api/v1/post/deletepost/${postIdToDelete}/${currentUser._id}`,
+        `api/v1/post/deletepost/${postIdToDelete}/${currentUser._id}`,
         { withCredentials: true }
       );
       const data = res.data;

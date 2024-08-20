@@ -21,7 +21,7 @@ export default function CommentSection({ postId }) {
       return;
     }
     try {
-      const res = await axios.post('http://localhost:3000/api/v1/comment/create', {
+      const res = await axios.post('api/v1/comment/create', {
         content: comment,
         postId,
         userId: currentUser._id,
@@ -41,9 +41,9 @@ export default function CommentSection({ postId }) {
   useEffect(() => {
     const getComments = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/v1/comment/getPostComments/${postId}`);
+        const res = await axios.get(`api/v1/comment/getPostComments/${postId}`);
         if (res.status === 200) {
-          const data = await res.data;
+          const data =  res.data;
           setComments(data);
         }
       } catch (error) {
@@ -59,7 +59,7 @@ export default function CommentSection({ postId }) {
         navigate('/sign-in');
         return;
       }
-      const res = await axios.put(`http://localhost:3000/api/v1/comment/likeComment/${commentId}`,{}, {withCredentials:true});
+      const res = await axios.put(`api/v1/comment/likeComment/${commentId}`,{}, {withCredentials:true});
       if (res.status==200) {
         const data = await res.data;
         setComments(
@@ -92,7 +92,7 @@ export default function CommentSection({ postId }) {
         navigate('/sign-in');
         return;
       }
-      const res = await axios.delete(`http://localhost:3000/api/v1/comment/deleteComment/${commentId}`, {withCredentials:true});
+      const res = await axios.delete(`api/v1/comment/deleteComment/${commentId}`, {withCredentials:true});
       if (res.status==200) {
         // const data = await res.data;
         setComments(comments.filter((comment) => comment._id !== commentId));

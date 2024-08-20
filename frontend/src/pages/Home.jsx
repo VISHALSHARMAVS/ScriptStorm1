@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get('http://localhost:3000/api/v1/post/getPosts');
+      const res = await axios.get('api/v1/post/getPosts');
       const data = await res.data;
       setPosts(data.posts);
     };

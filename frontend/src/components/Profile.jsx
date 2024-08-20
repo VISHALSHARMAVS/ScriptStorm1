@@ -91,7 +91,7 @@ function Profile() {
 
     try {
       dispatch(updateStart());
-      const res = await axios.put(`http://localhost:3000/api/v1/user/update/${currentUser._id}`, formData, { withCredentials: true });
+      const res = await axios.put(`api/v1/user/update/${currentUser._id}`, formData, { withCredentials: true });
       const data = res.data;
 
       if (!data.success) {
@@ -115,7 +115,7 @@ function Profile() {
     setShowModal(false);
     try {
       dispatch(deleteUserStart());
-      const res = await axios.delete(`http://localhost:3000/api/v1/user/delete/${currentUser._id}` ,  { withCredentials: true })
+      const res = await axios.delete(`api/v1/user/delete/${currentUser._id}` ,  { withCredentials: true })
       const data = await res.data;      
       if (!data.success) {
         dispatch(deleteUserFailure(data.message));
@@ -131,7 +131,7 @@ function Profile() {
   const handleSignOut = async ()=>{
 
   try {
-    const res=  await axios.post('http://localhost:3000/api/v1/user/signout')
+    const res=  await axios.post('api/v1/user/signout')
 
    
 

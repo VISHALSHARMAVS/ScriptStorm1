@@ -25,7 +25,7 @@ function Signin() {
         dispatch(signInStart());
 
         try {
-            const res = await axios.post('http://localhost:3000/api/v1/auth/signin', {
+            const res = await axios.post('api/v1/auth/signin', {
                 username,
                 password
             },{withCredentials:true});

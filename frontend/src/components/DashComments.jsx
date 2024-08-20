@@ -13,7 +13,7 @@ export default function DashComments() {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/v1/comment/getcomments',{withCredentials:true});
+        const res = await axios.get('api/v1/comment/getcomments',{withCredentials:true});
         if (res.status === 200) {
           setComments(res.data.comments);
           if (res.data.comments.length < 9) {
@@ -32,7 +32,7 @@ export default function DashComments() {
   const handleShowMore = async () => {
     const startIndex = comments.length;
     try {
-      const res = await axios.get(`http://localhost:3000/api/v1/comment/getcomments?startIndex=${startIndex}`,{withCredentials:true});
+      const res = await axios.get(`api/v1/comment/getcomments?startIndex=${startIndex}`,{withCredentials:true});
       if (res.status === 200) {
         setComments((prev) => [...prev, ...res.data.comments]);
         if (res.data.comments.length < 9) {
@@ -47,7 +47,7 @@ export default function DashComments() {
   const handleDeleteComment = async () => {
     setShowModal(false);
     try {
-      const res = await axios.delete(`http://localhost:3000/api/v1/comment/deleteComment/${commentIdToDelete}`,{withCredentials:true});
+      const res = await axios.delete(`api/v1/comment/deleteComment/${commentIdToDelete}`,{withCredentials:true});
       if (res.status === 200) {
         setComments((prev) => prev.filter((comment) => comment._id !== commentIdToDelete));
       } else {

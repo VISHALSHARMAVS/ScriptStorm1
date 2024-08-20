@@ -20,7 +20,7 @@ export default function OAuth() {
             console.log(resultFromGoogle.user.photoURL);
             
             // Send user data to the server
-            const response = await axios.post('http://localhost:3000/api/v1/auth/google', {
+            const response = await axios.post('api/v1/auth/google', {
         name: resultFromGoogle.user.displayName,
         email: resultFromGoogle.user.email,
         googlePhotoUrl: resultFromGoogle.user.photoURL,
