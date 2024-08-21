@@ -84,7 +84,7 @@ export default function Search() {
       if (data.posts.length === 9) {
         setShowMore(true);
       } else {
-        setShowMore(false);
+        setShowMore(false); 
       }
     } catch (error) {
       console.error('Error fetching more posts:', error);
@@ -105,7 +105,7 @@ export default function Search() {
               type='text'
               value={sidebarData.searchTerm}
               onChange={handleChange}
-              className='border rounded p-2'
+              className='border rounded p-2 md:w-full w-1/2'
             />
           </div>
           <div className='flex items-center gap-2'>
@@ -126,7 +126,7 @@ export default function Search() {
               onChange={handleChange}
               value={sidebarData.category}
               id='category'
-              className='border rounded p-2'
+              className='border rounded p-2 md:w-full w-1/2'
             >
               <option value='uncategorized'>Uncategorized</option>
               <option value='reactjs'>React.js</option>
