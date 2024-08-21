@@ -6,8 +6,8 @@ export default defineConfig({
   server: {
     proxy: {
       '/api/v1': {
-        target: 'https://scriptstorm.onrender.com',
-        secure: false,
+        target: 'https://scriptstorm1.onrender.com',
+        secure: true,
       },
     },
   },
