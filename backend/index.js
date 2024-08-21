@@ -11,23 +11,23 @@ import cookieParser from 'cookie-parser';
 const app = express();
 
 // Define allowed origins
-const allowedOrigins = ['https://scriptstorm1-1.onrender.com/', 'http://localhost:5173'];
+// const allowedOrigins = ['https://scriptstorm1-1.onrender.com/', 'http://localhost:5173'];
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or Postman)
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true
-};
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     // Allow requests with no origin (like mobile apps or Postman)
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//   credentials: true
+// };
 
 // Apply CORS middleware
-app.use(cors(corsOptions));
+app.use(cors({origin:'*', credentials:true , methods:["GET","HEAD","PUT","PATCH","POST","DELETE"],httpOnly:true}));
 
 connectDB();
 app.use(express.json());
