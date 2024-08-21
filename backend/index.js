@@ -39,11 +39,11 @@ app.use('/api/v1/user', userRoute);
 app.use('/api/v1/post', postRoute);
 app.use('/api/v1/comment', commentRoutes);
 
-app.use(express.static(path.join(__dirname, '/frontend/dist')));
+// app.use(express.static(path.join(__dirname, '/frontend/dist')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'));
+// });
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
