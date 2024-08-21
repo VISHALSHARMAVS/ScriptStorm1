@@ -27,7 +27,7 @@ const app = express();
 // };
 
 // Apply CORS middleware
-app.use(cors({origin:'*', credentials:true , methods:["GET","HEAD","PUT","PATCH","POST","DELETE"],httpOnly:true}));
+app.use(cors({origin:'https://scriptstorm1-1.onrender.com/', credentials:true , methods:["GET","HEAD","PUT","PATCH","POST","DELETE"],httpOnly:true}));
 
 connectDB();
 app.use(express.json());
