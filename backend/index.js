@@ -11,7 +11,7 @@ import cookieParser from 'cookie-parser';
 const app = express();
 
 // Define allowed origins
-const allowedOrigins = ['https://scriptstorm.onrender.com', 'http://localhost:5173'];
+const allowedOrigins = ['https://scriptstorm1-1.onrender.com/', 'http://localhost:5173'];
 
 const corsOptions = {
   origin: function (origin, callback) {
