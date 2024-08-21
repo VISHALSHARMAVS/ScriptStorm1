@@ -15,7 +15,7 @@ export default function Post() {
     const fetchPosts = async () => {
       try {
         const res = await axios.get(
-          `api/v1/post/getposts?userId=${currentUser._id}`
+          `https://scriptstorm1.onrender.com/api/v1/post/getposts?userId=${currentUser._id}`
         );
         const data = res.data;
 
@@ -40,7 +40,7 @@ export default function Post() {
 
     try {
       const res = await axios.get(
-        `api/v1/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`,
+        `https://scriptstorm1.onrender.com/api/v1/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`,
         { withCredentials: true }
       );
       const data = res.data;
@@ -63,7 +63,7 @@ export default function Post() {
 
     try {
       const res = await axios.delete(
-        `api/v1/post/deletepost/${postIdToDelete}/${currentUser._id}`,
+        `https://scriptstorm1.onrender.com/api/v1/post/deletepost/${postIdToDelete}/${currentUser._id}`,
         { withCredentials: true }
       );
       const data = res.data;

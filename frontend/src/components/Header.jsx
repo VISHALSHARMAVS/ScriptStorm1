@@ -54,7 +54,7 @@ function Header() {
 
   const handleSignOut = async () => {
     try {
-      const res = await axios.post('api/v1/user/signout');
+      const res = await axios.post('https://scriptstorm1.onrender.com/api/v1/user/signout');
       if (res.status === 200) {
         dispatch(signoutSuccess());
       } else {

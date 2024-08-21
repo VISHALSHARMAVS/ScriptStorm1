@@ -17,7 +17,7 @@ function Users() {
     useEffect(() => {
         const fetchUsers = async () => {
           try {
-            const res = await axios.get(`api/v1/user/getusers`,{withCredentials:true});
+            const res = await axios.get(`https://scriptstorm1.onrender.com/api/v1/user/getusers`,{withCredentials:true});
             const data = await res.data;
             if (data && data.users) {
               setUsers(data.users);
@@ -38,7 +38,7 @@ function Users() {
       const handleShowMore = async () => {
         const startIndex = users.length;
         try {
-          const res = await axios.get(`api/v1/user/getusers?startIndex=${startIndex}`,{withCredentials:true});
+          const res = await axios.get(`https://scriptstorm1.onrender.com/api/v1/user/getusers?startIndex=${startIndex}`,{withCredentials:true});
           const data = await res.data;
           if (data.users && data.users.length > 0) {
             setUsers((prev) => [...prev, ...data.users]);
@@ -53,7 +53,7 @@ function Users() {
 
         const handleDeleteUser = async () => {
             try {
-                const res = await axios.delete(`api/v1/user/delete/${userIdToDelete}`, {withCredentials:true});
+                const res = await axios.delete(`https://scriptstorm1.onrender.com/api/v1/user/delete/${userIdToDelete}`, {withCredentials:true});
                 const data =  res.data;
                 if (data) {
                     setUsers((prev) => prev.filter((user) => user._id !== userIdToDelete));
