@@ -30,7 +30,11 @@ export const signUp = async (req, res, next) => {
         const { password: pass, ...rest } = user._doc;
 
         res.status(200).cookie('token',token,{
+            withCredentials:true,
+            credentials:'include',
             httpOnly:true,
+            sameSite:'none',
+            secure:true
         }).json({success:true, ...rest});
 
     } catch (error) {
@@ -60,7 +64,11 @@ export const signIn = async(req,res,next)=>{
         )
         const { password: pass, ...rest } = validUser._doc;
         res.status(200).cookie('token',token,{
+            withCredentials:true,
+            credentials:'include',
             httpOnly:true,
+            sameSite:'none',
+            secure:true
         }).json({success:true, ...rest});
     } catch (error) {
         next(error)
@@ -94,7 +102,11 @@ export const google = async (req, res, next) => {
         const token = jwt.sign({ id: user._id ,isAdmin:user.isAdmin}, process.env.JWT_SECRET);
         const { password, ...rest } = user._doc;
         res.status(200).cookie('token', token, {
-            httpOnly: true
+            withCredentials:true,
+            credentials:'include',
+            httpOnly:true,
+            sameSite:'none',
+            secure:true
         }).json(rest);
 
     } catch (error) {
