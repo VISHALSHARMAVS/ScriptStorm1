@@ -85,7 +85,7 @@ function Header() {
         </span>
       </Link>
 
-      <form onSubmit={handleSubmit} className="relative hidden lg:block">
+      <form onSubmit={handleSubmit} className="relative hidden lg:inline">
         <input
           type="text"
           placeholder="Search..."
@@ -101,25 +101,17 @@ function Header() {
           <AiOutlineSearch />
         </button>
       </form>
-      <form onSubmit={handleSubmit} className="relative sm:hidden ">
-      <input
-          type="text"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="pl-10 pr-4 py-2 border rounded-lg"
-        />
-      <button className=' absolute left-3 top-1/2 transform -translate-y-1/2 w-12 h-10  text-gray-500 dark:text-white' >
-          <AiOutlineSearch />
-        </button>
-      </form>
+     
+      <button className="w-12 h-10 px-4 lg:hidden" onClick={handleSubmit}>
+        <AiOutlineSearch className="text-2xl" />
+      </button>
 
-      <button onClick={toggleMenu} className="w-12 h-10 lg:hidden" aria-label="Toggle Menu">
+      <button onClick={toggleMenu} className="sm:w-12 sm:h-10 w-8 h-6 lg:hidden" aria-label="Toggle Menu">
         {isMenuOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
       </button>
 
       <div className="flex gap-8 md:order-2">
-        <button className="hidden sm:inline" onClick={() => dispatch(toggleTheme())} aria-label="Toggle Dark Mode">
+        <button className="sm:inline w-4 sm:w-10" onClick={() => dispatch(toggleTheme())} aria-label="Toggle Dark Mode">
           {theme === 'light' ? <PiMoonFill className="text-2xl" /> : <FaSun />}
         </button>
 
@@ -133,7 +125,7 @@ function Header() {
               <img
                 src={currentUser.profilePicture}
                 alt="user"
-                className="w-10 h-10 rounded-full"
+                className="w-6 h-6 sm:w-10 sm:h-10 rounded-full"
               />
             </button>
             {isDropdownOpen && (
