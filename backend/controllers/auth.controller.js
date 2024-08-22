@@ -92,14 +92,15 @@ export const google = async (req, res, next) => {
             if (!user) {
                 return res.status(400).json({ message: "User registration failed" });
             }
-            const token = jwt.sign({ id: user._id ,isAdmin:user.isAdmin}, process.env.JWT_SECRET);
+          
+            const token = jwt.sign({ id: user._id ,isAdmin:user.isAdmin}, process.env.JWT_SECRET,  {expiresIn:'1d'});
             const { password, ...rest } = user._doc; 
         res.status(200).cookie('token', token, {
             httpOnly: true
         }).json(rest);
         }
 
-        const token = jwt.sign({ id: user._id ,isAdmin:user.isAdmin}, process.env.JWT_SECRET);
+        const token = jwt.sign({ id: user._id ,isAdmin:user.isAdmin}, process.env.JWT_SECRET,  {expiresIn:'1d'});
         const { password, ...rest } = user._doc;
         res.status(200).cookie('token', token, {
             withCredentials:true,
