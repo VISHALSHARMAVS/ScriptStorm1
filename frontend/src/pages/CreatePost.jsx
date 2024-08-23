@@ -104,9 +104,15 @@ export default function CreatePost() {
             className='flex-1 p-2 border border-gray-300 rounded-md'
           >
             <option value='uncategorized'>Select a category</option>
+            <option value='uncategorized'>Movie Review </option>
+            <option value='uncategorized'>Poem</option>
+            <option value='uncategorized'>Story</option>
+            <option value='uncategorized'>Fiction</option>
+            <option value='uncategorized'>Quote</option>
             <option value='javascript'>JavaScript</option>
             <option value='reactjs'>React.js</option>
             <option value='nextjs'>Next.js</option>
+            <option value='nextjs'>Other</option>
           </select>
         </div>
         <div className='flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3'>
