@@ -11,7 +11,7 @@ import cookieParser from 'cookie-parser';
 const app = express();
 
 // Apply CORS middleware
-app.use(cors({origin:'https://scriptstorm1-1.onrender.com', credentials:true , methods:["GET","HEAD","PUT","PATCH","POST","DELETE"], allowedHeaders:'content-type' }));
+app.use(cors({origin:'https://scriptstorm47.onrender.com', credentials:true , methods:["GET","HEAD","PUT","PATCH","POST","DELETE"], allowedHeaders:'content-type' }));
 
 connectDB();
 app.use(express.json());
