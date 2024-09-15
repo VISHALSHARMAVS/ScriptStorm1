@@ -78,7 +78,7 @@ function Signin() {
                         </span>
                     </Link>
                     <p className="text-sm mt-5">
-                        This is a demo project. You can sign up with your email and password.
+                   {` Unlock your personalized dashboard and access all the exciting content you've missed. Whether it's exploring new blogs, interacting with stories, or sharing your thoughts, you're just a login away.`}
                     </p>
                 </div>
                 <div className="flex-1 h-full">

@@ -82,7 +82,7 @@ function Signup() {
                         </span>
                     </Link>
                     <p className="text-sm mt-5">
-                        This is a demo project. You can sign up with your email and password.
+                    Dive into a world of creativity, stories, blogs, and more. Sign up today to start sharing your thoughts, reading engaging content, and connecting with fellow readers and writers.
                     </p>
                 </div>
                 <div className="flex-1">
