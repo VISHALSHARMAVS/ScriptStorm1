@@ -24,7 +24,7 @@ export default function DashboardComp() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get('https://scriptstorm1.onrender.com/api/v1/user/getusers?limit=5',{withCredentials:true});
+        const res = await axios.get('https://scriptstorm-47.onrender.com/api/v1/user/getusers?limit=5',{withCredentials:true});
         setUsers(res.data.users);
         setTotalUsers(res.data.totalUsers);
         setLastMonthUsers(res.data.lastMonthUsers);
@@ -35,7 +35,7 @@ export default function DashboardComp() {
 
     const fetchPosts = async () => {
       try {
-        const res = await axios.get('https://scriptstorm1.onrender.com/api/v1/post/getposts?limit=5',);
+        const res = await axios.get('https://scriptstorm-47.onrender.com/api/v1/post/getposts?limit=5',);
         setPosts(res.data.posts);
         setTotalPosts(res.data.totalPosts);
         setLastMonthPosts(res.data.lastMonthPosts);
@@ -46,7 +46,7 @@ export default function DashboardComp() {
 
     const fetchComments = async () => {
       try {
-        const res = await axios.get('https://scriptstorm1.onrender.com/api/v1/comment/getcomments?limit=5',{withCredentials:true});
+        const res = await axios.get('https://scriptstorm-47.onrender.com/api/v1/comment/getcomments?limit=5',{withCredentials:true});
         setComments(res.data.comments);
         setTotalComments(res.data.totalComments);
         setLastMonthComments(res.data.lastMonthComments);

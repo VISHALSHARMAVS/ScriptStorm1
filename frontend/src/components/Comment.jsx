@@ -13,7 +13,7 @@ export default function Comment({ comment , onLike,onEdit,onDelete}) {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const res = await axios.get(`https://scriptstorm1.onrender.com/api/v1/user/${comment.userId}`);
+        const res = await axios.get(`https://scriptstorm-47.onrender.com/api/v1/user/${comment.userId}`);
         const data = await res.data;
         if (res.status === 200) {
           setUser(data);
@@ -32,7 +32,7 @@ export default function Comment({ comment , onLike,onEdit,onDelete}) {
 
   const handleSave = async () => {
     try {
-      const res  = await axios.put(`https://scriptstorm1.onrender.com/api/v1/comment/editComment/${comment._id}`,editedContent, {withCredentials:true});
+      const res  = await axios.put(`https://scriptstorm-47.onrender.com/api/v1/comment/editComment/${comment._id}`,editedContent, {withCredentials:true});
       if (res.status==200) {
         setIsEditing(false);
         onEdit(comment, editedContent);

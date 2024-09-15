@@ -28,7 +28,7 @@ export default function UpdatePost() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const res = await axios.get(`https://scriptstorm1.onrender.com/api/v1/post/getposts?postId=${postId}`);
+        const res = await axios.get(`https://scriptstorm-47.onrender.com/api/v1/post/getposts?postId=${postId}`);
   
         if (res.status === 200 && res.data.posts.length > 0) {
            
@@ -83,7 +83,7 @@ export default function UpdatePost() {
     try {
         
       const res = await axios.put(
-        `https://scriptstorm1.onrender.com/api/v1/post/updatepost/${postId}/${currentUser._id}`,formData,{withCredentials:true});
+        `https://scriptstorm-47.onrender.com/api/v1/post/updatepost/${postId}/${currentUser._id}`,formData,{withCredentials:true});
 
       if (res.status === 200) {
         navigate(`/post/${res.data.slug}`);

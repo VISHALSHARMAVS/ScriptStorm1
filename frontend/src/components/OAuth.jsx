@@ -20,7 +20,7 @@ export default function OAuth() {
             console.log(resultFromGoogle.user.photoURL);
             
             // Send user data to the server
-            const response = await axios.post('https://scriptstorm1.onrender.com/api/v1/auth/google', {
+            const response = await axios.post('https://scriptstorm-47.onrender.com/api/v1/auth/google', {
         name: resultFromGoogle.user.displayName,
         email: resultFromGoogle.user.email,
         googlePhotoUrl: resultFromGoogle.user.photoURL,

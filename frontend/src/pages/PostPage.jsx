@@ -14,7 +14,7 @@ export default function PostPage() {
     const fetchPost = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`https://scriptstorm1.onrender.com/api/v1/post/getposts?slug=${postSlug}`);
+        const res = await axios.get(`https://scriptstorm-47.onrender.com/api/v1/post/getposts?slug=${postSlug}`);
         const data = await res.data;
         if (!res.status==200) {
           setError(true);
@@ -40,7 +40,7 @@ export default function PostPage() {
   useEffect(() => {
     try {
       const fetchRecentPosts = async () => {
-        const res = await axios.get(`https://scriptstorm1.onrender.com/api/v1/post/getposts?limit=3`);
+        const res = await axios.get(`https://scriptstorm-47.onrender.com/api/v1/post/getposts?limit=3`);
         const data = await res.data;
         if (res.status==200) {
           setRecentPosts(data.posts);

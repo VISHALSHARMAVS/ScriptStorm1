@@ -36,7 +36,7 @@ export default function Search() {
       setLoading(true);
       const searchQuery = urlParams.toString();
       try {
-        const res = await axios.get(`https://scriptstorm1.onrender.com/api/v1/post/getposts?${searchQuery}`);
+        const res = await axios.get(`https://scriptstorm-47.onrender.com/api/v1/post/getposts?${searchQuery}`);
         const data = res.data;
         setPosts(data.posts);
         setLoading(false);
@@ -78,7 +78,7 @@ export default function Search() {
     urlParams.set('startIndex', startIndex);
     const searchQuery = urlParams.toString();
     try {
-      const res = await axios.get(`https://scriptstorm1.onrender.com/api/v1/post/getposts?${searchQuery}`);
+      const res = await axios.get(`https://scriptstorm-47.onrender.com/api/v1/post/getposts?${searchQuery}`);
       const data = res.data;
       setPosts((prevPosts) => [...prevPosts, ...data.posts]);
       if (data.posts.length === 9) {

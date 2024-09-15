@@ -56,7 +56,7 @@ export default function CreatePost() {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('https://scriptstorm1.onrender.com/api/v1/post/create', formData, {          withCredentials: true, 
+            const res = await axios.post('https://scriptstorm-47.onrender.com/api/v1/post/create', formData, {          withCredentials: true, 
             });
           
             if (res.status !== 201) {

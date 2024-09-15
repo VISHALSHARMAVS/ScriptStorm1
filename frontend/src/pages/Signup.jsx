@@ -31,7 +31,7 @@ function Signup() {
         dispatch(signInStart());
 
         try {
-            const res = await axios.post('https://scriptstorm1.onrender.com/api/v1/auth/signup', {
+            const res = await axios.post('https://scriptstorm-47.onrender.com/api/v1/auth/signup', {
                 username,
                 email,
                 password
