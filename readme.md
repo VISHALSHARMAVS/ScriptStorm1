@@ -11,7 +11,7 @@ ScriptStorm is a full-stack web application designed to manage and streamline th
 
 ## Live Demo
 
-Check out the live version of the application at: [ScriptStorm](https://scriptstorm1-1.onrender.com/)
+Check out the live version of the application at: [ScriptStorm](https://scriptstorm47.onrender.com/)
 
 ## Installation
 
